@@ -9,6 +9,16 @@ const Wrapper = styled.div`
 display: flex;
 align-items: center;
 justify-content: space-evenly;
+
+@media(max-width: 540px){
+height: 100%;
+// background: blue;
+width: 100%;
+gap: 10px;
+flex-direction: column;
+justify-content: space-between;
+} 
+
 `
 const Title = styled.h1`
     display: inline-block;
@@ -16,6 +26,14 @@ const Title = styled.h1`
     left: 300px;
     top: 20px;
     border-bottom: 4px solid #f1d5bb;
+    @media(max-width: 540px){
+      display: grid;
+      place-items: center;
+      position: relative;
+      left: 0;
+      top: 100px;
+      // background: blue;
+    }
 `
 const Btn = styled.button`
   background: #000;
@@ -29,18 +47,28 @@ const Btn = styled.button`
   padding: 10px;
   font-size: 20px;
   cursor: pointer;
+  @media(max-width: 540px){
+    left: 0;
+    display: grid;
+    place-items: center;
+    position: relative;
+    bottom: -150px;
+    margin: 0 auto;
+  }
 `
 
 
-const Menu = () => {
+const Menu = ({ data, onclickFunction }) => {
+
   return (
     <div className='wrapper'>
     <Title>SUSHI FOOD</Title>
     <Wrapper>
     <Navbar />
-    <MenuBody />
+    <MenuBody body={data} />
     </Wrapper>
-    <Btn>Load More</Btn>
+    {data.length <= 8 && <Btn onClick={onclickFunction}>Load More</Btn>}
+    {/* <Btn onClick={onclickFunction}>Load More</Btn> */}
     </div>
   )
 }

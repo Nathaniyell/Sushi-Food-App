@@ -19,7 +19,7 @@ box-shadow: 8px 8px 8px rgba(0,0,0, 0.3);
 flex-direction: column;
 align-items: center;
 justify-content: space-around;
-
+z-index: 78888;
 
 
 h1{
@@ -33,6 +33,28 @@ h1{
    padding: 10px 20px;
     text-align: center;
 }
+@media(max-width: 540px){
+  width: 100%;
+  height: 70px;
+  flex-direction: row;
+  left:unset;
+  top: 10px;
+
+
+  h1{
+    font-size: 2.2rem;
+  }
+  img{
+    width: 25px;
+  }
+  .menu-img{
+    display: grid;
+    place-items: center;
+    width: 40px;
+    padding: 25px 10px;
+  }
+}
+
 `
 
 
